@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 387311607}
   - component: {fileID: 387311606}
   - component: {fileID: 387311605}
+  - component: {fileID: 387311608}
   m_Layer: 5
   m_Name: LeftButton
   m_TagString: Untagged
@@ -244,6 +245,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387311603}
   m_CullTransparentMesh: 1
+--- !u!114 &387311608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387311603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1290814077}
+          m_TargetAssemblyTypeName: CubeMovement, Assembly-CSharp
+          m_MethodName: clickLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1290814077}
+          m_TargetAssemblyTypeName: CubeMovement, Assembly-CSharp
+          m_MethodName: releaseLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +386,7 @@ GameObject:
   - component: {fileID: 621503469}
   - component: {fileID: 621503468}
   - component: {fileID: 621503467}
+  - component: {fileID: 621503470}
   m_Layer: 5
   m_Name: RightButton
   m_TagString: Untagged
@@ -449,6 +496,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621503465}
   m_CullTransparentMesh: 1
+--- !u!114 &621503470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621503465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1290814077}
+          m_TargetAssemblyTypeName: CubeMovement, Assembly-CSharp
+          m_MethodName: clickRight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1290814077}
+          m_TargetAssemblyTypeName: CubeMovement, Assembly-CSharp
+          m_MethodName: releaseRight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1290814072
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +553,7 @@ GameObject:
   - component: {fileID: 1290814073}
   - component: {fileID: 1290814075}
   - component: {fileID: 1290814076}
+  - component: {fileID: 1290814077}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -555,7 +648,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &1290814076
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -572,6 +665,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0067720413, y: 0.009029292}
   m_Size: {x: 0.116163015, y: 0.19291212}
   m_Direction: 0
+--- !u!114 &1290814077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290814072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8139756c7bdad7c44ab5ee489798bcaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1290814075}
+  MovementSpeed: 2000
 --- !u!1 &1339759565
 GameObject:
   m_ObjectHideFlags: 0
