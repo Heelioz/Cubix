@@ -1,12 +1,11 @@
-
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class ScoreManager : MonoBehaviour
+
+public class CollisionDetecter : MonoBehaviour
 {
 
   [SerializeField] private GameObject MenuGameOver;
@@ -21,7 +20,6 @@ public class ScoreManager : MonoBehaviour
    public float maxpuntuacionValue;
 
    public Text puntuacionAlcanzada;
-   
 
    private void Start()
    {
@@ -33,7 +31,6 @@ public class ScoreManager : MonoBehaviour
 
    void Update(){
      
-     
     if(flag != 1){
      puntuacionValue +=Time.deltaTime;
      puntuacionText.text = puntuacionValue.ToString("0");
@@ -44,20 +41,26 @@ public class ScoreManager : MonoBehaviour
 
         maxpuntuacionText.text = puntuacionValue.ToString("0");
      }
+    }
+   }
 
-     if(puntuacionValue >= 2){
-        //UnityEditor.EditorApplication.isPlaying=false;
+
+   private void OnCollisionEnter2D(Collision2D other)
+   {
+    if(other.collider.CompareTag("Rock")){
+
         MenuGameOver.SetActive(true);
-        flag=1;
-        if(flag == 1){
-          puntuacionAlcanzada.text =puntuacionValue.ToString("0");
+         flag=1;
+         Debug.Log(flag);
+         if(flag == 1){
+            puntuacionAlcanzada.text =puntuacionValue.ToString("0");
             puntuacionValue=0;
             puntuacionText.text = puntuacionValue.ToString("0");
            
         }
-        Cube.SetActive(false);
-     }
-
+            Cube.SetActive(false);
+        
     }
    }
-}
+
+   }
