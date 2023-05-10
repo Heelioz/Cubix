@@ -45,7 +45,7 @@ public class ScoreManager : MonoBehaviour
         maxpuntuacionText.text = puntuacionValue.ToString("0");
      }
 
-     if(puntuacionValue >= 4){
+     if(puntuacionValue >= 120){
         //UnityEditor.EditorApplication.isPlaying=false;
         MenuGameOver.SetActive(true);
         flag=1;
