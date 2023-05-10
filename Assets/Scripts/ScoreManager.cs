@@ -19,11 +19,14 @@ public class ScoreManager : MonoBehaviour
    public Text maxpuntuacionText;
 
    public float maxpuntuacionValue;
+
+   public Text puntuacionAlcanzada;
    
 
    private void Start()
    {
     flag=0;
+     
      maxpuntuacionValue = PlayerPrefs.GetFloat("MaxPuntuacion");
      maxpuntuacionText.text = maxpuntuacionValue.ToString("0");
    }
@@ -42,13 +45,15 @@ public class ScoreManager : MonoBehaviour
         maxpuntuacionText.text = puntuacionValue.ToString("0");
      }
 
-     if(puntuacionValue >= 120){
+     if(puntuacionValue >= 4){
         //UnityEditor.EditorApplication.isPlaying=false;
         MenuGameOver.SetActive(true);
         flag=1;
         if(flag == 1){
+          puntuacionAlcanzada.text =puntuacionValue.ToString("0");
             puntuacionValue=0;
             puntuacionText.text = puntuacionValue.ToString("0");
+           
         }
         Cube.SetActive(false);
      }
